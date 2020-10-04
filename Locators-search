@@ -1,0 +1,33 @@
+Locators
+
+
+Amazon logo
+Search using contains
+$x ("//span[contains(@class, 'nav-logo-base')]")
+
+
+Continue button, search By Id
+$x("//input[@id='continue']")
+
+Need help link , search By Class
+$x("//span[@class = 'a-expander-prompt']")
+
+Forgot your password link
+using By Id
+$x("//a[@id ='auth-fpp-link-bottom']")
+
+using Contains
+$x("//a[ contains(@ id, 'auth-fpp-link-bottom')]")
+
+
+Other issues with Sign-In link , By Id
+$x("//a[ @id = 'ap-other-signin-issues-link']")
+
+Create your Amazon account button , By And
+$x("//a[@id = 'createAccountSubmit' and @class = 'a-button-text']")
+
+Conditions of use link , By Text()
+$x("//a[text() = 'Conditions of Use']")
+
+Privacy Notice link , By Text()
+$x("//a[text()='Privacy Notice']")
