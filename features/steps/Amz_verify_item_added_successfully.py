@@ -15,24 +15,22 @@ def open_amazon_homepage(context):
 def search_box(context):
     search_b = context.driver.find_element(*SEARCH_ITEM).send_keys('Vase')
 
-@Then('Click on the search icon')
+@then('Click on the search icon')
 def click_search_icon(context):
     click_search_btn = context.driver.find_element(*SEARCH_BTN1)
     click_search_btn.click()
 
-@Then('Add the first item to the cart')
+@then('Add the first item to the cart')
 def add_item1(context):
-    item1 = context.driver.find_element(By.XPATH, "//span[@class='a-size-base-plus a-color-base a-text-normal' and text()= 'Libbey Prologue Drift Handmade Ceramic Carafe Vase, White']")
+    item1 = context.driver.find_element(By.CSS_SELECTOR, "div.aok-relative")
     item1.click()
 
-@Then('click on the add icon')
+@then('click on the add icon')
 def add_to_cart(context):
     add_cart = context.driver.find_element(*ADD_TO_CART)
     add_cart.click()
 
-@Then('verify the cart has the item')
+@then('verify the cart has the item')
 def verify_cart(context):
-    verify_cart1 = context.driver.find_element(*CHECK_CART)
-
-
-
+    verify_cart1 = context.driver.find_element(*CHECK_CART).text
+    assert verify_cart1 == 'Proceed to checkout (1 item)', f'Error. Expected item shown in the Cart, but got {verify_cart1}'
