@@ -2,18 +2,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from behave import given, when, then
 
+
+
 @given("Open Amazon Homepage")
-def open_amazon_homepage(context):
-    context.driver.get("https://www.amazon.com/")
+def open_Amazon(context):
+    context.app.main_page.open_amazon()
 
 @when('click the cart icon')
-def click_icon(context):
-    cart = context.driver.find_element(By.XPATH, "//span[@id='nav-cart-count']")
-    cart.click()
+def click_search_icon(context):
+    context.app.verify_cart_page.click_search_icon()
 
 @then('Verify the page shows Your Amazon Cart is empty')
-def verify_cart(context):
-    res = context.driver.find_element(By.CSS_SELECTOR, ("div.sc-your-amazon-cart-is-empty"))
-    assert res.text == 'Your Amazon Cart is empty', f'Error. Expected Your Amazon Cart is empty, but got {res.text}'
+def verify_search_result(context):
+    context.app.verify_cart_page.verify_link('Your Amazon Cart is empty')
 
 

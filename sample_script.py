@@ -1,6 +1,8 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 # init driver
 driver = webdriver.Chrome(executable_path='C:\Program Files\Git\Automation\Automation\python-selenium-automation\chromedriver.exe')

@@ -1,6 +1,10 @@
-# Created by sathi at 10/27/2020
-Feature: # Enter feature name here
-  # Enter feature description here
+# Created by sona at 10/27/2020
+Feature: Amazon main page
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+
+  Scenario: Sign_In popup disappears
+    Given Open Amazon
+    Then Sign-In popup is present and clickable
+    When Sign_In popup disappears
+    Then Verify Sign-In popup is not clickable
+

@@ -1,5 +1,8 @@
 from selenium import webdriver
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from app.application import Application
 
 def browser_init(context):
     """
@@ -8,9 +11,10 @@ def browser_init(context):
     context.driver = webdriver.Chrome(executable_path='C:\Program Files\Git\Automation\Automation\python-selenium-automation\chromedriver.exe')
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
-
+    context.app = Application(context.driver)
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
+
 
 
 def before_scenario(context, scenario):
