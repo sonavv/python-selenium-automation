@@ -3,6 +3,8 @@ from Pages.search_result_page import SearchResult
 from Pages.verify_sign_in_page import SignInPage
 from Pages.verify_cart_page import EmptyCart
 from Pages.Hamburger_page import Hamburger
+from Pages.Dept_page import DeptPage
+from Pages.new_arrival_page import NewArrival
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -19,3 +21,7 @@ class Application:
         self.verify_cart_page = EmptyCart(self.driver)
 
         self.Hamburger_page = Hamburger(self.driver)
+
+        self.Dept_page = DeptPage(self.driver)
+
+        self.new_arrival_page = NewArrival(self.driver)
